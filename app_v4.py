@@ -20,7 +20,7 @@ st.markdown(
         bottom: 0;
         left: 0;
         width: inherit;
-        text-align: center;
+        text-align: left;
         color: grey;
         font-size: 0.8em;
         padding: 0.5rem;
@@ -432,13 +432,7 @@ selected_tab = st.sidebar.radio(
     label_visibility = "collapsed"
 )
 st.sidebar.markdown("---")
-st.sidebar.markdown(
-    "<div class='sidebar-footer'>"
-    "Built by <a href='https://junechoi.com' target='_blank'>June Choi</a> | "
-    "Data source: <a href='https://www.worldbank.org/en/programs/debt-statistics/ids' target='_blank'>World Bank IDS</a>"
-    "</div>",
-    unsafe_allow_html=True
-)
+
 
 # -----------------------------------------------------------------------------
 # TAB 1: External Debt
@@ -1401,3 +1395,18 @@ elif selected_tab == "Interest Payments":
     else:
         st.info('Select countries in the sidebar to view creditor composition and World aggregate trends')
 
+# st.markdown("---")
+# st.markdown(
+#     "<div style='text-align: left; color: grey; font-size: 0.75em;'>"
+#     "Built by <a href='https://junechoi.com' target='_blank'>June Choi</a> | "
+#     "Data source: <a href='https://www.worldbank.org/en/programs/debt-statistics/ids' target='_blank'>World Bank IDS</a>"
+#     "</div>",
+#     unsafe_allow_html=True
+# )
+st.sidebar.markdown(
+    "<div class='sidebar-footer'>"
+    "Built by <a href='https://junechoi.com' target='_blank'>June Choi</a> | "
+    "Data source: <a href='https://www.worldbank.org/en/programs/debt-statistics/ids' target='_blank'>World Bank IDS</a>"
+    "</div>",
+    unsafe_allow_html=True
+)
