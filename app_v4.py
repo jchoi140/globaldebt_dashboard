@@ -391,7 +391,7 @@ debtor_names = load_debtor_names()
 
 # Initialize session state for selected countries
 if 'selected_countries' not in st.session_state:
-    st.session_state.selected_countries = ['DOM', 'JAM', 'MEX']
+    st.session_state.selected_countries = ['LIC', 'JAM', 'MEX']
 
 # -----------------------------------------------------------------------------
 # Draw the actual page
