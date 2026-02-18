@@ -12,6 +12,27 @@ st.set_page_config(
     page_icon=':chart_with_upwards_trend:',
     layout='wide',
 )
+st.markdown(
+    """
+    <style>
+    .sidebar-footer {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: inherit;
+        text-align: center;
+        color: grey;
+        font-size: 0.8em;
+        padding: 0.5rem;
+        # background: white;
+    }
+    .sidebar-footer a {
+        color: grey;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
 
 # -----------------------------------------------------------------------------
 # Helper Functions
@@ -410,13 +431,14 @@ selected_tab = st.sidebar.radio(
     ["External Debt", "Debt Service", "Interest Payments"],
     label_visibility = "collapsed"
 )
+st.sidebar.markdown("---")
 
 # -----------------------------------------------------------------------------
 # TAB 1: External Debt
 # -----------------------------------------------------------------------------
 
 if selected_tab == "External Debt":
-    st.sidebar.markdown("## Select")
+    # st.sidebar.markdown("## Select")
 
     indicators = sorted(debt_df['Indicator Name'].unique())
     # Remove specific indicators
@@ -434,7 +456,7 @@ if selected_tab == "External Debt":
     counterpart_areas = sorted(debt_df['Counterpart Area'].unique())
 
     selected_indicator = st.sidebar.selectbox(
-        'Indicator',
+        'Select Indicator',
         indicators,
         index=0 if len(indicators) > 0 else 0
     )
@@ -784,7 +806,7 @@ if selected_tab == "External Debt":
 # -----------------------------------------------------------------------------
 
 elif selected_tab == "Debt Service":
-    st.sidebar.markdown("## Select")
+    # st.sidebar.markdown("## Select")
     
     # Load the debt service indicator
     debt_service_indicator = 'Debt service on external debt, long-term (TDS, current US$)'
@@ -1041,7 +1063,7 @@ elif selected_tab == "Debt Service":
 # -----------------------------------------------------------------------------
 
 elif selected_tab == "Interest Payments":
-    st.sidebar.markdown("## Select")
+    # st.sidebar.markdown("## Select")
 
     interest_indicators = sorted(get_available_indicators())
 
@@ -1055,7 +1077,7 @@ elif selected_tab == "Interest Payments":
 
 
     selected_int_indicator = st.sidebar.selectbox(
-        'Indicator',
+        'Select Indicator',
         interest_indicators,
         index=0 if len(interest_indicators) > 0 else 0
     )
@@ -1371,3 +1393,13 @@ elif selected_tab == "Interest Payments":
                 st.info('No creditor breakdown data available for selected countries in this time range')
     else:
         st.info('Select countries in the sidebar to view creditor composition and World aggregate trends')
+
+
+# ---------------credits --------------------------------------------------------------#
+# st.sidebar.markdown("---")
+st.sidebar.markdown(
+    "<div class='sidebar-footer'>"
+    "Built by <a href='https://junechoi.com' target='_blank'>June Choi</a> | Data source: <a href='https://www.worldbank.org/en/programs/debt-statistics/ids' target='_blank'>World Bank IDS</a>"
+    "</div>",
+    unsafe_allow_html=True
+)
