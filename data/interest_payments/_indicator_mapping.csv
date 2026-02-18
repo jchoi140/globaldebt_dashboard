@@ -1,0 +1,11 @@
+indicator,filename
+"Debt service on external debt, long-term (TDS, current US$)",debt_service_on_external_debt_long-term_tds_current_us$
+"Interest payments on external debt, long-term (INT, current US$)",interest_payments_on_external_debt_long-term_int_current_us$
+"Interest payments on external debt, short-term (INT, current US$)",interest_payments_on_external_debt_short-term_int_current_us$
+Average interest on new external debt commitments (%),average_interest_on_new_external_debt_commitments_pct
+"Average interest on new external debt commitments, official (%)",average_interest_on_new_external_debt_commitments_official_pct
+"Average interest on new external debt commitments, private (%)",average_interest_on_new_external_debt_commitments_private_pct
+"Interest rescheduled, official (current US$)",interest_rescheduled_official_current_us$
+"Interest rescheduled, private (current US$)",interest_rescheduled_private_current_us$
+Interest forgiven (current US$),interest_forgiven_current_us$
+Interest rescheduled (capitalized) (current US$),interest_rescheduled_capitalized_current_us$
