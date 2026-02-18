@@ -1,4 +1,4 @@
-# Sovereign Debt Dashboard
+# Global Sovereign Debt Dashboard
 
 An interactive Streamlit dashboard for exploring sovereign debt indicators across countries, years, and creditor counterparties. Built with data from the World Bank International Debt Statistics (IDS).
 
